@@ -1,5 +1,5 @@
 import { Roboto } from '@next/font/google'
-
+import { Analytics } from '@vercel/analytics/react';
 import '@styles/globals.scss'
 import Header from '@components/layouts/Header';
 
@@ -25,6 +25,7 @@ export default function RootLayout({
       <body className={`${roboto.variable} font-sans scroll-smooth`}>
         {/* <Header /> */}
         {children}
+        <Analytics />
       </body>
     </html>
   )
