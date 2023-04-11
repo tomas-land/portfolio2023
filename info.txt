@@ -1,0 +1,20 @@
+social icons / react social icons
+typewriter /running words / react simple typewriter
+
+1 npx create-next-app@latest --use npm --ts --experimental-app .
+2 created styles folder in app folder, created global,mixin, variables files and pages,components folders.
+3 npm i @next/font
+4 npm i sass
+
+
+
+
+
+
+
+
+
+
+npm i @next/font 
+npm i sass
+npm install react-social-icons

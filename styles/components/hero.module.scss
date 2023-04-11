@@ -1,0 +1,100 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include scrollDown();
+
+  //////////////////////////////////////////////////
+  .social_icons {
+    @include flex-center();
+    padding-bottom: 4rem;
+    gap: 1.5rem;
+
+    .icon {
+      background-color: $primary;
+      border: 1px solid $primary3;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba($primary5, 0.2);
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        border: 1px solid $primary5;
+        transform: scale(1.1);
+        background-color: $primary2;
+        fill: red;
+      }
+    }
+  }
+
+  .name {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
+    text-align: center;
+    color: $primary3;
+  }
+
+  .title {
+    // font-family: $font-raleway;
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 0.8rem;
+    text-align: center;
+    color: $primary4;
+  }
+
+  .underline {
+    border-bottom: 1px solid $primary3;
+    width: 100%;
+    height: 0.1rem;
+    color: $primary4;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    color: $primary4;
+
+    .nav_items {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 0;
+      gap: 3rem;
+
+      .nav_item {
+        border: 1px solid transparent;
+        letter-spacing: 0.5rem;
+        padding: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          border: 1px solid $primary4;
+
+        }
+      }
+    }
+  }
+
+  // .frame {
+  //   box-shadow: inset 50px 10px 10px 10px rgba(20, 20, 20, 0.2);
+  //   border-radius: 20%;
+  //   overflow: hidden;
+  //   position: relative;
+
+  //   .foto {
+  //     position: absolute;
+  //     filter: brightness(0.8);
+  //   }
+
+  //   .intro {}
+  // }
+}

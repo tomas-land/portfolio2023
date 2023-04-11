@@ -1,0 +1,45 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.about {
+  position: relative;
+  height: 100vh;
+  @include flex-center();
+  flex-direction: column;
+
+  @include scrollDown();
+
+  .wrapper {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .foto {
+      object-fit: cover;
+      border-radius: 40%;
+      background: rgb(119, 119, 119);
+      background: radial-gradient(circle, rgba(119, 119, 119, 1) 13%, rgba(17, 17, 17, 1) 92%);
+      filter: brightness(70%);
+      margin-bottom: 2rem;
+    }
+
+    .content {
+      text-align: justify;
+      max-width: 25rem;
+
+      .title {
+        color: $primary3;
+        font-size: 1.5rem;
+        text-align: center;
+        letter-spacing: 1rem;
+        padding: 2rem;
+      }
+
+      .text {
+        color: $primary4;
+        padding: 2rem;
+      }
+    }
+  }
+}
