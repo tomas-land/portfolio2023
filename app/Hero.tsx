@@ -11,7 +11,10 @@ const Hero = () => {
         <SocialIcon url="https://linkedin.com" className={s.icon} target="_blank" rel="noopener noreferrer" bgColor='transparent' fgColor='#504a4a' />
       </div>
       <div className={s.name}>TOMAS LANDA</div>
-      <div className={s.title}>WEB-DEVELOPER</div>
+      <div className={s.title}>
+        <div className={s.part1}>WEB</div>
+        <div className={s.part2}>DEVELOPER</div>
+      </div>
       <div className={s.underline}></div>
       <nav className={s.nav}>
         <ul className={s.nav_items}>

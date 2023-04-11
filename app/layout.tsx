@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.variable} font-sans scroll-smooth`}>
-        {/* <Header /> */}
+        <Header />
         {children}
         <Analytics />
       </body>

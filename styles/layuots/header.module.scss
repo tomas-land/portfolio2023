@@ -2,14 +2,19 @@
 @import '~styles/mixins';
 
 .header {
-  @include flex-center();
-  height: 4rem;
-  position: fixed;
-  inset: 0 0 0 0;
-  z-index: 1000;
-  background-color: $primary;
-
+  display: none;
   
+  @include breakpoint("lg") {
+    @include flex-center();
+    height: 4rem;
+    position: fixed;
+    inset: 0 0 0 0;
+    z-index: 1000;
+    background-color: $primary;
+    color: red;
+  }
+
+
 
   // .logo{
   //     display: flex;
