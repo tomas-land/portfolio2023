@@ -18,3 +18,4 @@ typewriter /running words / react simple typewriter
 npm i @next/font 
 npm i sass
 npm install react-social-icons
+npm install react-icons --save

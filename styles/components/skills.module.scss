@@ -1,0 +1,73 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.skills {
+  position: relative;
+  height: 100vh;
+  @include flex-center();
+  flex-direction: column;
+  color: aliceblue;
+
+  @include scrollDown();
+
+  .title {
+    color: $primary3;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 1rem;
+  }
+
+  .underline {
+    border-bottom: 1px solid $primary3;
+    width: 100%;
+    height: 0.1rem;
+    color: $primary4;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 2rem;
+    @include breakpoint("md") {
+      flex-wrap: wrap;
+    }
+
+    .icon {
+      background-color: $primary3;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      padding: 1rem;
+      @include flex-center();
+      box-shadow: 0 0 15px rgba($primary5, 0.2);
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid $primary4;
+        transform: scale(1.1);
+
+      }
+
+      .tech_name {
+        position: absolute;
+        @include flex-center();
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s ease-in-out;
+
+
+        &:hover {
+          background-color: $primary2;
+          color: $primary4;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+}
