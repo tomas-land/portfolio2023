@@ -1,5 +1,6 @@
 import s from "@styles/components/hero.module.scss"
 import { SocialIcon } from 'react-social-icons';
+import nav_list from "@/lib/data";
 import Link from "next/link";
 
 const Hero = () => {
@@ -18,11 +19,9 @@ const Hero = () => {
       <div className={s.underline}></div>
       <nav className={s.nav}>
         <ul className={s.nav_items}>
-          <li className={s.nav_item}><a href="#about">ABOUT ME</a></li>
-          <li className={s.nav_item}>SKILLS</li>
-          <li className={s.nav_item}>PROJECTS</li>
-          <li className={s.nav_item}>RESUME</li>
-          <li className={s.nav_item}>CONTACT ME</li>
+          {nav_list.map((item) => (
+            <li className={s.nav_item} key={item.name}><a href={item.path}>{item.name}</a></li>
+          ))}
         </ul>
       </nav>
       <a className={s.scroll_down_btn} href="#about" ><span></span></a>

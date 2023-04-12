@@ -14,7 +14,7 @@ const About = () => {
           <p className={s.text}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quae magnam corrupti neque ipsam a incidunt dicta sunt? Cupiditate quo amet ad tenetur quasi neque recusandae culpa repudiandae excepturi error adipisci omnis ullam, quisquam magnam cum earum. Reiciendis neque aut quos! At architecto neque, sapiente voluptates eius molestiae repellat. Hic?</p>
         </div>
       </div>
-      <a className={s.scroll_down_btn} href="#hero" ><span></span></a>
+      <a className={s.scroll_down_btn} href="#skills" ><span></span></a>
 
     </section>
   )

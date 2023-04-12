@@ -41,7 +41,6 @@
 
     @include breakpoint("md") {
       font-size: 1.2rem;
-
     }
   }
 
@@ -62,21 +61,14 @@
     }
 
     .part1 {
-
-
-
       @include breakpoint("md") {
         font-size: 9rem;
-
       }
     }
 
     .part2 {
-
-
       @include breakpoint("md") {
         font-size: 2.8rem;
-       
       }
     }
   }
@@ -93,7 +85,7 @@
     justify-content: center;
     color: $primary4;
 
-    @include breakpoint("lg") {
+    @include breakpoint("md") {
       display: none;
     }
 
@@ -102,14 +94,25 @@
       justify-content: center;
       align-items: center;
       padding: 2rem 0;
-      gap: 3rem;
+      gap: 2.5rem;
+
+      @include breakpoint("lg") {
+        padding: 1rem 0;
+        gap: 1rem;
+      }
 
       .nav_item {
         border: 1px solid transparent;
+        font-size: 1rem;
         letter-spacing: 0.5rem;
         padding: 1rem;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
+
+        @include breakpoint("lg") {
+          letter-spacing: 0.3rem;
+          font-size: 0.8rem;
+        }
 
         &:hover {
           border: 1px solid $primary4;
