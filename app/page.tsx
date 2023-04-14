@@ -2,6 +2,7 @@ import styles from '@styles/pages/page.module.scss'
 import Hero from './Hero'
 import About from './About'
 import Skills from './Skills'
+import Projects from './Projects'
 
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <About />
       <Skills />
+      <Projects />
     </main>
   )
 }

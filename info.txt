@@ -19,3 +19,4 @@ npm i @next/font
 npm i sass
 npm install react-social-icons
 npm install react-icons --save
+npm install @splidejs/react-splide

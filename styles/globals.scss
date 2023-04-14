@@ -96,6 +96,35 @@ body {
   font-family: $font-roboto;
 }
 
+h1 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: normal;
+
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: normal;
+
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: normal;
+
+}
+
+h5 {
+  font-size: 0.5rem;
+  font-weight: normal;
+
+}
+
 // body {
 //   color: rgb(var(--foreground-rgb));
 //   background: linear-gradient(to bottom,
@@ -108,8 +137,8 @@ a {
   text-decoration: none;
 }
 
-// @media (prefers-color-scheme: dark) {
-//   html {
-//     color-scheme: dark;
-//   }
+// ul,
+// li {
+//   list-style: none;
+//   padding: 0;
 // }

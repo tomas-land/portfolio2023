@@ -13,7 +13,8 @@ const roboto = Roboto({
   weight: ['400', '500', '700', '900'],
   variable: '--font-roboto',
   display: 'swap',
-  fallback: ['Roboto', 'sans-serif']
+  preload: true,
+  // fallback: ['Roboto', 'sans-serif']
 });
 
 export default function RootLayout({
@@ -23,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} font-sans scroll-smooth`}>
+      <body className={`${roboto.variable} scroll-smooth`}>
         <Header />
         {children}
         <Analytics />

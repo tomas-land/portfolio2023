@@ -3,7 +3,7 @@ import { FaReact, FaSass } from 'react-icons/fa'
 import { SiNextdotjs } from 'react-icons/si'
 import { GrMysql } from 'react-icons/gr'
 import { BsGit } from 'react-icons/bs'
-import { SiTypescript } from 'react-icons/si'
+import { SiTypescript, SiPrisma } from 'react-icons/si'
 
 const Skills = () => {
   return (
@@ -17,9 +17,9 @@ const Skills = () => {
         <div className={s.icon}><GrMysql size={30} /><div className={s.tech_name}>MYSQL</div></div>
         <div className={s.icon}><SiTypescript size={30} /><div className={s.tech_name}>TS</div></div>
         <div className={s.icon}><FaSass size={30} /><div className={s.tech_name}>SASS</div></div>
+        <div className={s.icon}><SiPrisma size={30} /><div className={s.tech_name}>PRISMA</div></div>
       </div>
-      <a className={s.scroll_down_btn} href="#about" ><span></span></a>
-
+      <a className={s.scroll_down_btn} href="#projects" ><span></span></a>
     </section>
   )
 }
