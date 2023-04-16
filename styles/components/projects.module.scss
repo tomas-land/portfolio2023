@@ -3,7 +3,7 @@
 
 .projects {
   position: relative;
-  // height: 100vh;
+  min-height: 100vh;
   @include flex-center();
   flex-direction: column;
 
@@ -53,15 +53,19 @@
       }
 
       .content {
-        padding: 2rem;
-      
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 2rem 0;
+        line-height: 1.4rem;
 
+        
         .name {
           color: $primary4;
           font-size: 1.5rem;
           text-align: center;
           letter-spacing: 1rem;
-          padding: 0 2rem 2rem;
+          line-height: 2rem;
+          padding: 0 0 2rem;
         }
 
         .description {
@@ -73,7 +77,12 @@
           color: $primary;
           padding: 2rem;
 
+          @include breakpoint("sm") {
+            padding: 1rem 0;
+          }
+
           .feat_title {
+            margin-bottom: 1rem;
             color: $primary4;
           }
         }
@@ -84,6 +93,10 @@
         flex-direction: column;
         padding: 0 2rem;
 
+        @include breakpoint("sm") {
+          padding: 0 0 1rem;
+        }
+
         .tech_title {
           margin-bottom: 1rem;
           color: $primary4;
@@ -92,6 +105,32 @@
         .icons {
           display: flex;
           gap: 1rem;
+        }
+      }
+
+      .btns {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        padding: 0 2rem;
+        gap: 3rem;
+
+        @include breakpoint("md") {
+          padding: 3rem 2rem;
+        }
+
+        @include breakpoint("sm") {
+          padding: 2rem 0;
+        }
+
+        .btn {
+          padding: 0.5rem 2rem;
+          border: $primary4 1px solid;
+          font-size: 1rem;
+          letter-spacing: 0.5rem;
+          padding: 1rem;
+          color: $primary4;
+          box-shadow: 0 0 10px rgba($primary5, 0.2);
         }
       }
     }

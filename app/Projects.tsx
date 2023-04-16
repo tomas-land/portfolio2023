@@ -9,6 +9,7 @@ import { SiTypescript, SiPrisma } from 'react-icons/si'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/core';
 import Image from "next/image"
+import Link from "next/link"
 import image1 from "../public/images/foto1.jpeg"
 import image2 from "../public/images/foto2.jpeg"
 
@@ -29,7 +30,7 @@ const Projects = () => {
                 pagination: false,
                 interval: 3000,
                 speed: 5000,
-                height: 300,
+                height: 600,
                 pauseOnHover: false,
                 breakpoints: {
                   768: {
@@ -67,6 +68,10 @@ const Projects = () => {
                 <FaSass size={30} />
                 <SiPrisma size={30} />
               </div>
+            </div>
+            <div className={s.btns}>
+              <Link href="https://expenses-tracker-self.vercel.app" target="_blank" rel="noopener noreferrer" className={s.btn}>PREVIEW</Link>
+              <Link href="https://github.com/tomas-land/portfolio2023" target="_blank" rel="noopener noreferrer" className={s.btn}>CODE</Link>
             </div>
           </div>
         </div>
