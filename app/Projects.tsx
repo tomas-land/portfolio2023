@@ -10,8 +10,9 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/core';
 import Image from "next/image"
 import Link from "next/link"
-import image1 from "../public/images/foto1.jpeg"
-import image2 from "../public/images/foto2.jpeg"
+import exp_tracker_images from "@/lib/images/exp_tracker"
+
+
 
 const Projects = () => {
   return (
@@ -39,12 +40,11 @@ const Projects = () => {
                 }
               }}
               aria-label="My Favorite Images">
-              <SplideSlide >
-                <Image src={image1} className={s.image} alt="Image 1" />
-              </SplideSlide>
-              <SplideSlide>
-                <Image src={image2} className={s.image} alt="Image 2" />
-              </SplideSlide>
+              {exp_tracker_images.map((image, index) => (
+                <SplideSlide key={index} className="slide">
+                  <Image src={image} className={s.image} alt="Image 1" />
+                </SplideSlide>
+              ))}
             </Splide>
           </div>
           <div className={s.content}>
@@ -71,7 +71,7 @@ const Projects = () => {
             </div>
             <div className={s.btns}>
               <Link href="https://expenses-tracker-self.vercel.app" target="_blank" rel="noopener noreferrer" className={s.btn}>PREVIEW</Link>
-              <Link href="https://github.com/tomas-land/portfolio2023" target="_blank" rel="noopener noreferrer" className={s.btn}>CODE</Link>
+              <Link href="https://github.com/tomas-land/expenses-tracker" target="_blank" rel="noopener noreferrer" className={s.btn}>CODE</Link>
             </div>
           </div>
         </div>
