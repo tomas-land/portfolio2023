@@ -4,7 +4,7 @@ import s from '@styles/layuots/header.module.scss'
 import { SocialIcon } from 'react-social-icons';
 import Hamburger from 'hamburger-react'
 import { useState } from 'react'
-import nav_list from '@/lib/data';
+import nav_list from '@/lib/data/nav_list';
 
 
 const Header = () => {

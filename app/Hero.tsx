@@ -1,6 +1,6 @@
 import s from "@styles/components/hero.module.scss"
 import { SocialIcon } from 'react-social-icons';
-import nav_list from "@/lib/data";
+import nav_list from "@/lib/data/nav_list";
 import Link from "next/link";
 
 const Hero = () => {
@@ -25,13 +25,6 @@ const Hero = () => {
         </ul>
       </nav>
       <a className={s.scroll_down_btn} href="#about" ><span></span></a>
-      {/* <div className={s.frame}>
-
-      <Image src={foto} alt="foto" width={300} priority className={s.foto} />
-      </div>
-      <div className={s.intro}></div>
-
-      Web-Developer */}
     </section>
   )
 }
