@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <>
-      <div className={s.header}>
+      <div className={`${s.header} ${isOpen ? s.remove_opacity : ''}`}>
         <Hamburger size={30} color={isOpen ? '#363636' : '#777777'} toggled={isOpen} toggle={setOpen} />
       </div>
       {isOpen &&

@@ -17,7 +17,9 @@
     letter-spacing: 1rem;
     padding: 2rem;
     font-weight: 700;
-    
+    @include breakpoint("sm") {
+      font-size: 1.2rem;
+    }
   }
 
   .icons {

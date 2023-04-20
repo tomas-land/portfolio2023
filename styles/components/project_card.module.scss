@@ -32,11 +32,12 @@
 
       @include breakpoint("md") {
         height: 240%;
-
+        filter: none;
       }
 
       @include breakpoint("sm") {
         height: 140%;
+        filter: none;
 
       }
     }

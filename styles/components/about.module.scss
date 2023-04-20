@@ -37,13 +37,22 @@
         letter-spacing: 1rem;
         padding: 2rem;
         font-weight: 700;
+
+        @include breakpoint("sm") {
+          padding: 1rem;
+          font-size: 1.2rem;
+        }
       }
 
       .text {
         color: $primary4;
-        padding: 2rem;
-        line-height: 1.6rem;
-       text-indent: 2rem;
+        padding: 1rem 2.5rem;
+        line-height: 1.4rem;
+        text-indent: 2rem;
+
+        @include breakpoint("sm") {
+          font-size: 0.8rem;
+        }
       }
     }
   }

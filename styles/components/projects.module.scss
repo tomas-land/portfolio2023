@@ -14,8 +14,12 @@
     font-size: 1.5rem;
     text-align: center;
     letter-spacing: 1rem;
-    padding: 2rem;
+    padding: 3rem 0 1rem;
     font-weight: 700;
+    @include breakpoint("sm") {
+
+      font-size: 1.2rem;
+    }
   }
 
   .wrapper {
