@@ -1,5 +1,5 @@
 import s from "@styles/components/projects.module.scss"
-import projects from "@/lib/data/projects.js"
+import projects from "@/lib/data/projects"
 import Project_Card from "./Project_Card"
 
 

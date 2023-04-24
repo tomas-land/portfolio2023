@@ -2,22 +2,18 @@
 @import "../mixins.scss";
 
 .projects {
-  position: relative;
   min-height: 100vh;
   @include flex-center();
   flex-direction: column;
-
-  @include scrollDown();
 
   .title {
     color: $primary3;
     font-size: 1.5rem;
     text-align: center;
     letter-spacing: 1rem;
-    padding: 3rem 0 1rem;
+    padding: 3rem 0 2rem;
     font-weight: 700;
     @include breakpoint("sm") {
-
       font-size: 1.2rem;
     }
   }

@@ -1,15 +1,20 @@
 "use client"
 
 import s from "@styles/components/project_card.module.scss"
-import { FaReact, FaSass } from 'react-icons/fa'
-import { SiNextdotjs } from 'react-icons/si'
-import { GrMysql } from 'react-icons/gr'
-import { BsGit } from 'react-icons/bs'
-import { SiTypescript, SiPrisma } from 'react-icons/si'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/core';
 import Image, { StaticImageData } from "next/image"
 import Link from "next/link"
+import { IconType } from "react-icons/lib";
+import Tech_Icon from "./components/Tech_Icon"
+
+
+// import { FaReact, FaSass } from "react-icons/fa";
+// import { SiNextdotjs } from "react-icons/si";
+// import { GrMysql } from "react-icons/gr";
+// import { BsGit } from "react-icons/bs";
+// import { SiTypescript, SiPrisma } from "react-icons/si";
+// import tech_icons from "@/lib/images/icons";
 
 
 interface iProps {
@@ -18,13 +23,14 @@ interface iProps {
     description: string;
     images: StaticImageData[];
     features: string[];
+    tech_stack: string[];
     link_to_preview: string;
     link_to_github: string;
   }
 }
 
 const Project_Card = ({ project }: iProps) => {
-  const { name, description, images, link_to_preview, link_to_github } = project;
+  const { name, description, images, features, tech_stack, link_to_preview, link_to_github } = project;
   return (
     <div className={s.card}>
       <div className={s.slider}>
@@ -45,11 +51,10 @@ const Project_Card = ({ project }: iProps) => {
                 height: 300,
               }
             }
-          }}
-          aria-label="My Favorite Images">
+          }}>
           {images.map((image, index) => (
-            <SplideSlide key={index} className="slide">
-              <Image src={image} className={s.image} alt="Image 1" />
+            <SplideSlide key={index}>
+              <Image src={image} className={s.image} alt="project_image" />
             </SplideSlide>
           ))}
         </Splide>
@@ -60,17 +65,13 @@ const Project_Card = ({ project }: iProps) => {
         <div className={s.features}>
           <h4 className={s.feat_title}>Features</h4>
           <ul>
-           {project.features.map((feature, index) => <li key={index}>{feature}</li>)}
+            {features.map((feature, index) => <li className={s.feature} key={index}>{feature}</li>)}
           </ul>
         </div>
         <div className={s.technologies}>
           <h4 className={s.tech_title}>Technologies</h4>
-          <div className={s.icons}>
-            <SiNextdotjs size={30} />
-            <FaReact size={30} />
-            <SiTypescript size={30} />
-            <FaSass size={30} />
-            <SiPrisma size={30} />
+          <div className={s.tech_icons}>
+            {tech_stack.map((icon_name: string) => <div key={icon_name}><Tech_Icon icon_name={icon_name} /></div>)}
           </div>
         </div>
         <div className={s.btns}>
