@@ -14,7 +14,7 @@ const roboto = Roboto({
   variable: '--font-roboto',
   display: 'swap',
   preload: true,
-  // fallback: ['Roboto', 'sans-serif']
+  fallback: ['Roboto', 'sans-serif']
 });
 
 export default function RootLayout({

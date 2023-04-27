@@ -1,24 +1,17 @@
-import Mailgun from "mailgun.js";
-import formData from "form-data";
+import sendgrid from "@sendgrid/mail";
 
 export async function POST(request: Request) {
   const { name, email, message } = await request.json();
-  console.log(name, email, message);
-  const API_KEY = process.env.MAILGUN_API_KEY || "";
-  const DOMAIN = process.env.MAILGUN_DOMAIN || "";
-  const mailgun = new Mailgun(formData);
-  const client = mailgun.client({ username: "api", key: API_KEY });
-
-  const messageData = {
-    from: `Portfolio contact form ${email}`,
+  
+  sendgrid.setApiKey(process.env.SENDGRID_API_KEY || "");
+  const msg = {
     to: "tomaslanda1989@gmail.com",
-    subject: `message from ${name}`,
+    from: "tomaslanda1989@gmail.com",
+    subject: `${name} sent you a message from ${email}`,
     text: message,
   };
-
   try {
-    const response = await client.messages.create(DOMAIN, messageData)
-    console.log(response);
+    await sendgrid.send(msg);
     return new Response("Message sent successfully", { status: 200 });
   } catch (error) {
     console.error(error);

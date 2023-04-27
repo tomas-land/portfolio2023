@@ -13,17 +13,17 @@ const Tech_Icon = ({ icon_name }: iProps) => {
   const renderIcon = (icon_name: string) => {
     switch (icon_name) {
       case "react":
-        return <FaReact />;
+        return <FaReact size={25} />;
       case "sass":
-        return <FaSass />;
+        return <FaSass size={25} />;
       case "next":
-        return <SiNextdotjs />;
+        return <SiNextdotjs size={25} />;
       case "mysql":
-        return <GrMysql />;
+        return <GrMysql size={25} />;
       case "typescript":
-        return <SiTypescript />;
+        return <SiTypescript size={25} />;
       case "prisma":
-        return <SiPrisma />;
+        return <SiPrisma size={25} />;
       default:
         return <div>Icon not found</div>;
     }
