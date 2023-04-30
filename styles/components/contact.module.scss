@@ -45,8 +45,10 @@
         outline: none;
         transition: all 0.3s ease-in-out;
 
+
         &:focus {
           border-bottom: 1px solid $primary5;
+          background-color: transparent;
         }
 
         &:focus::placeholder {
@@ -56,20 +58,33 @@
       }
 
       .message {
-
         height: 2rem;
         border-bottom: 1px solid $primary4;
         background: transparent;
         color: $primary4;
-        font-size: 1.2rem;
-        letter-spacing: 0.1rem;
+        font-size: 1.1rem;
+        line-height: 1.3rem;
+        letter-spacing: 0.2rem;
+        text-align: justify;
         outline: none;
         transition: all 0.3s ease-in-out;
 
         &:focus {
           border-bottom: 1px solid $primary5;
+          height: 8rem;
         }
+
+        &:focus::placeholder {
+          color: transparent;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
       }
+
 
       .errors {
         color: rgb(216, 5, 5);

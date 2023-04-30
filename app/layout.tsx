@@ -2,6 +2,7 @@ import { Roboto } from '@next/font/google'
 import { Analytics } from '@vercel/analytics/react';
 import '@styles/globals.scss'
 import Header from '@components/layouts/Header';
+import Footer from '@components/layouts/Footer';
 
 export const metadata = {
   title: 'Tomas Landa - Web Developer',
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body className={`${roboto.variable} scroll-smooth`}>
         <Header />
         {children}
+        <Footer />
         <Analytics />
       </body>
     </html>

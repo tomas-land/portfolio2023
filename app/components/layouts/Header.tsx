@@ -11,7 +11,7 @@ const Header = () => {
   const [isOpen, setOpen] = useState(false)
 
   return (
-    <>
+    <header>
       <div className={`${s.header} ${isOpen ? s.remove_opacity : ''}`}>
         <Hamburger size={30} color={isOpen ? '#363636' : '#777777'} toggled={isOpen} toggle={setOpen} />
       </div>
@@ -23,7 +23,7 @@ const Header = () => {
             ))}
           </ul>
         </nav>}
-    </>
+    </header>
 
   )
 }

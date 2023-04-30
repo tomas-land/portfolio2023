@@ -1,0 +1,29 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+
+.footer {
+  text-align: center;
+
+  .link_to_old_version {
+    font-size: 2rem;
+    padding: 0.5rem;
+    color: $primary4;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      border: 1px solid $primary4;
+
+    }
+
+    @include breakpoint("sm") {
+      font-size: 1.2rem;
+    }
+  }
+
+  .copyright {
+    padding: 1rem;
+    color: $primary4;
+  }
+}

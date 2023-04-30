@@ -6,6 +6,7 @@ import Link from "next/link";
 const Hero = () => {
   return (
     <section id="hero" className={s.hero}>
+      <div className={s.version}>v2.0</div>
       <div className={s.social_icons}>
         <SocialIcon url="https://facebook.com" className={s.icon} target="_blank" rel="noopener noreferrer" bgColor='transparent' fgColor='#777777' />
         <SocialIcon url="https://github.com" className={s.icon} target="_blank" rel="noopener noreferrer" bgColor='transparent' fgColor='#777777' />

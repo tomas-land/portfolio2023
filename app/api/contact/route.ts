@@ -2,7 +2,6 @@ import sendgrid from "@sendgrid/mail";
 
 export async function POST(request: Request) {
   const { name, email, message } = await request.json();
-  
   sendgrid.setApiKey(process.env.SENDGRID_API_KEY || "");
   const msg = {
     to: "tomaslanda1989@gmail.com",
@@ -12,7 +11,7 @@ export async function POST(request: Request) {
   };
   try {
     await sendgrid.send(msg);
-    return new Response("Message sent successfully", { status: 200 });
+   console.log('object');
   } catch (error) {
     console.error(error);
   }

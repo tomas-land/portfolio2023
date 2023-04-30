@@ -4,6 +4,7 @@ import { FormEvent, useState, useEffect } from "react"
 import s from "@styles/components/contact.module.scss"
 import validateFormData from "@/lib/helpers/validate_form"
 import { iFormErrors } from "@/lib/interfaces"
+import capitalizeFistLetter from "@/lib/helpers/capitalize_first_letter"
 
 
 const Contact = () => {
@@ -17,6 +18,10 @@ const Contact = () => {
   useEffect(() => {
     if (isSubmitted) setErrors(validateFormData({ name, email, message }))
   }, [name, email, message, isSubmitted])
+
+  useEffect(() => {
+    setMessage(capitalizeFistLetter(message))
+  }, [message])
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
@@ -45,11 +50,10 @@ const Contact = () => {
           <div className={s.inputs}>
             <input className={s.input} type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
             <div className={s.errors}>{errors.name}</div>
-            <input className={s.input} type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input className={s.input} type="text" placeholder="Email" autoComplete="off" value={email} onChange={(e) => setEmail(e.target.value)} />
             <div className={s.errors}>{errors.email}</div>
             <textarea className={s.message} maxLength={800} placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
             <div className={s.errors}>{errors.message}</div>
-            {/* <button className={s.submit_btn} type="submit">SEND</button> */}
             {isMessageSent ? <div className={s.message_sent}>Thank you!</div> : <button className={s.submit_btn} type="submit">SEND</button>}
           </div>
         </form>
