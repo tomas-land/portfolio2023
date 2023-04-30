@@ -51,8 +51,8 @@
 @mixin scrollDown() {
   .scroll_down_btn {
     position: absolute;
-    bottom: 0rem;
-    padding: 3rem;
+    bottom: 1rem;
+    padding: 2rem;
     cursor: pointer;
   }
 
