@@ -8,7 +8,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  // background: rgb(54, 54, 54);
+  // background: radial-gradient(circle, rgba(54, 54, 54, 1) 14%, rgba(30, 30, 30, 1) 54%);
+  //   background: rgb(17,17,17);
+  // background: radial-gradient(top right, rgba(17,17,17,1) 6%, rgba(30,30,30,1) 46%);
+  // background: linear-gradient(to top right, $primary2, $primary2);
 
+  // background: rgb(54, 54, 54);
+  // background: linear-gradient(227deg, rgb(54, 54, 54) 3%, rgb(30, 30, 30) 37%);
+
+  background: rgb(54,54,54);
+background: linear-gradient(234deg, rgba(54,54,54,1) 4%, rgba(30,30,30,1) 27%);
+ 
   @include scrollDown();
 
   .version {
