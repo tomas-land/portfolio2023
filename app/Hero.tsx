@@ -44,6 +44,10 @@ const Hero = () => {
       },
     },
   };
+  useEffect(() => {
+    animate(nameRef.current, "show") 
+    animate(titleRef.current, "show")
+  }, [isInViewName, isInViewTitle])
   return (
     <section id="hero" className={s.hero}>
       <div className={s.version}>v2.0</div>
@@ -52,8 +56,8 @@ const Hero = () => {
         <SocialIcon url="https://github.com" className={s.icon} target="_blank" rel="noopener noreferrer" bgColor='transparent' fgColor='#777777' />
         <SocialIcon url="https://linkedin.com" className={s.icon} target="_blank" rel="noopener noreferrer" bgColor='transparent' fgColor='#777777' />
       </div>
-      <motion.div className={s.name} ref={nameRef} animate={isInViewName ? "show" : "hide"} variants={nameVariants} >TOMAS LANDA</motion.div>
-      <motion.div className={s.title} ref={titleRef} animate={isInViewTitle ? "show" : "hide"} variants={titleVariants}>
+      <motion.div className={s.name} ref={nameRef} initial="hide" animate={isInViewName ? "show" : "hide"} variants={nameVariants} >TOMAS LANDA</motion.div>
+      <motion.div className={s.title} ref={titleRef} initial="hide" animate={isInViewTitle ? "show" : "hide"} variants={titleVariants}>
         <div className={s.part1}>WEB</div>
         <div className={s.part2}>DEVELOPER</div>
       </motion.div>
