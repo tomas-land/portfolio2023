@@ -45,6 +45,9 @@
         outline: none;
         transition: all 0.3s ease-in-out;
 
+        @include breakpoint("sm") {
+          font-size: 0.8rem;
+        }
 
         &:focus {
           border-bottom: 1px solid $primary5;
@@ -62,12 +65,18 @@
         border-bottom: 1px solid $primary4;
         background: transparent;
         color: $primary4;
-        font-size: 1.1rem;
+        font-size: 1rem;
         line-height: 1.3rem;
         letter-spacing: 0.2rem;
         text-align: justify;
         outline: none;
+        resize: vertical;
+        font-family: $font-roboto;
         transition: all 0.3s ease-in-out;
+
+        @include breakpoint("sm") {
+          font-size: 0.8rem;
+        }
 
         &:focus {
           border-bottom: 1px solid $primary5;

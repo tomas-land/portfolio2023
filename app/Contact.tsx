@@ -11,10 +11,32 @@ const Contact = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
-  const [errors, setErrors] = useState<iFormErrors>({ name: '', email: '', message: '' })
+  const [errors, setErrors] = useState<iFormErrors>({})
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isMessageSent, setIsMessageSent] = useState(false)
 
+
+  const handleSubmit = async (e: FormEvent) => {
+    // e.preventDefault()
+    // setIsSubmitted(true)
+    // const validation_errors = validateFormData({ name, email, message })
+    // if (Object.keys(validation_errors).length > 0) {
+    //   setErrors(validation_errors);
+    //   return;
+    // }
+    // try {
+    //   const res = await fetch('/api/contact', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({ name, email, message })
+    //   })
+    //   if (res.status === 200) setIsMessageSent(true)
+    // } catch (error) {
+    //   console.log(error)
+    // }
+  }
   useEffect(() => {
     if (isSubmitted) setErrors(validateFormData({ name, email, message }))
   }, [name, email, message, isSubmitted])
@@ -22,25 +44,6 @@ const Contact = () => {
   useEffect(() => {
     setMessage(capitalizeFistLetter(message))
   }, [message])
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-    setIsSubmitted(true)
-    if (Object.keys(errors).length > 0) return;
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ name, email, message })
-      })
-      if (res.status === 200) setIsMessageSent(true)
-    } catch (error) {
-      console.log(error)
-    }
-    return
-  }
 
   return (
     <section id="contact" className={s.contact}>
@@ -52,7 +55,7 @@ const Contact = () => {
             <div className={s.errors}>{errors.name}</div>
             <input className={s.input} type="text" placeholder="Email" autoComplete="off" value={email} onChange={(e) => setEmail(e.target.value)} />
             <div className={s.errors}>{errors.email}</div>
-            <textarea className={s.message} maxLength={800} placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+            <textarea className={s.message} maxLength={800} placeholder="Message" value={message} autoCorrect="off" onChange={(e) => setMessage(e.target.value)}></textarea>
             <div className={s.errors}>{errors.message}</div>
             {isMessageSent ? <div className={s.message_sent}>Thank you!</div> : <button className={s.submit_btn} type="submit">SEND</button>}
           </div>
