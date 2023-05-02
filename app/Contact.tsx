@@ -17,25 +17,25 @@ const Contact = () => {
 
 
   const handleSubmit = async (e: FormEvent) => {
-    // e.preventDefault()
-    // setIsSubmitted(true)
-    // const validation_errors = validateFormData({ name, email, message })
-    // if (Object.keys(validation_errors).length > 0) {
-    //   setErrors(validation_errors);
-    //   return;
-    // }
-    // try {
-    //   const res = await fetch('/api/contact', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({ name, email, message })
-    //   })
-    //   if (res.status === 200) setIsMessageSent(true)
-    // } catch (error) {
-    //   console.log(error)
-    // }
+    e.preventDefault()
+    setIsSubmitted(true)
+    const validation_errors = validateFormData({ name, email, message })
+    if (Object.keys(validation_errors).length > 0) {
+      setErrors(validation_errors);
+      return;
+    }
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email, message })
+      })
+      if (res.status === 200) setIsMessageSent(true)
+    } catch (error) {
+      console.log(error)
+    }
   }
   useEffect(() => {
     if (isSubmitted) setErrors(validateFormData({ name, email, message }))

@@ -9,14 +9,6 @@ import { IconType } from "react-icons/lib";
 import Tech_Icon from "./components/Tech_Icon"
 
 
-// import { FaReact, FaSass } from "react-icons/fa";
-// import { SiNextdotjs } from "react-icons/si";
-// import { GrMysql } from "react-icons/gr";
-// import { BsGit } from "react-icons/bs";
-// import { SiTypescript, SiPrisma } from "react-icons/si";
-// import tech_icons from "@/lib/images/icons";
-
-
 interface iProps {
   project: {
     name: string;
