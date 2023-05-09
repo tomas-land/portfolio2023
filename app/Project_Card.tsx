@@ -67,8 +67,8 @@ const Project_Card = ({ project }: iProps) => {
           </div>
         </div>
         <div className={s.btns}>
-          <Link href={link_to_preview} target="_blank" rel="noopener noreferrer" className={s.btn}>PREVIEW</Link>
-          <Link href={link_to_github} target="_blank" rel="noopener noreferrer" className={s.btn}>CODE</Link>
+          <Link href={link_to_preview} target="_blank" rel="noopener noreferrer" className={s.btn_preview}></Link>
+          <Link href={link_to_github} target="_blank" rel="noopener noreferrer" className={s.btn_code}></Link>
         </div>
       </div>
     </div>

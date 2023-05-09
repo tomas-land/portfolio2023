@@ -13,6 +13,14 @@
   scroll-behavior: smooth;
 }
 
+// custom property for gradient angle to use in conic-gradient with animation
+@property --gradient-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+
 html,
 body {
   background-color: $primary2;

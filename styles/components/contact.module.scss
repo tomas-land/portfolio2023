@@ -99,30 +99,17 @@
         color: rgb(216, 5, 5);
         font-size: 0.8rem;
         height: 2rem;
-        // background-color: rgb(37, 21, 21);
         text-align: center;
         letter-spacing: 0.2rem;
         padding: 0.5rem;
 
       }
 
-      .submit_btn {
-        margin-top: 3rem;
-        padding: 0.5rem 2rem;
-        border: $primary4 1px solid;
-        background: transparent;
-        font-size: 1rem;
-        letter-spacing: 0.5rem;
-        padding: 1rem;
-        color: $primary4;
-        box-shadow: 0 0 10px rgba($primary5, 0.2);
-        cursor: pointer;
+    }
 
-        @include breakpoint("sm") {
-          padding: 0.5rem 1rem;
-          font-size: 0.8rem;
-        }
-      }
+    .btn_submit {
+      margin-top: 2rem;
+      @include btn-glowing-shadow($primary2, "SEND");
     }
 
     .message_sent {

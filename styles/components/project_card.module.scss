@@ -123,19 +123,27 @@
         padding: 2rem 0;
       }
 
-      .btn {
-        padding: 0.5rem 2rem;
-        border: $primary4 1px solid;
-        font-size: 1rem;
-        letter-spacing: 0.5rem;
-        padding: 1rem;
-        color: $primary4;
-        box-shadow: 0 0 10px rgba($primary5, 0.2);
+      // .btn {
+      //   padding: 0.5rem 2rem;
+      //   border: $primary4 1px solid;
+      //   font-size: 1rem;
+      //   letter-spacing: 0.5rem;
+      //   padding: 1rem;
+      //   color: $primary4;
+      //   box-shadow: 0 0 10px rgba($primary5, 0.2);
 
-        @include breakpoint("sm") {
-          padding: 0.5rem 1rem;
-          font-size: 0.8rem;
-        }
+      //   @include breakpoint("sm") {
+      //     padding: 0.5rem 1rem;
+      //     font-size: 0.8rem;
+      //   }
+      // }
+
+      .btn_preview {
+        @include btn-glowing-shadow($primary3, "PREVIEW");
+      }
+
+      .btn_code {
+        @include btn-glowing-shadow($primary3, "CODE");
       }
     }
   }

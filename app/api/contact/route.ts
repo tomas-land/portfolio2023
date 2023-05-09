@@ -11,7 +11,7 @@ export async function POST(request: Request) {
   };
   try {
     await sendgrid.send(msg);
-    return new Response("Message sent successfully", {status: 200,});
+    return new Response("Message sent successfully", {status: 200});
   } catch (error) {
     console.error(error);
   }

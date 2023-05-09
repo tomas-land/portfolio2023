@@ -57,8 +57,8 @@ const Contact = () => {
             <div className={s.errors}>{errors.email}</div>
             <textarea className={s.message} maxLength={800} placeholder="Message" value={message} autoCorrect="off" onChange={(e) => setMessage(e.target.value)}></textarea>
             <div className={s.errors}>{errors.message}</div>
-            {isMessageSent ? <div className={s.message_sent}>Thank you!</div> : <button className={s.submit_btn} type="submit">SEND</button>}
           </div>
+            {isMessageSent ? <div className={s.message_sent}>Thank you!</div> : <button className={s.btn_submit} type="submit"></button>}
         </form>
       </div >
     </section >

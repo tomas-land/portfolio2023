@@ -38,9 +38,25 @@ const bottom_to_top_Variants = {
     },
   },
 };
+const circleHeroVariant = {
+  hide: {
+    scale: 0,
+  },
+  show: {
+    opacity: 1,
+    scale: 1.2,
+    transition: {
+      duration: 5,
+      type: "spring",
+      bounce: 0.5,
+    },
+  },
+};
+
 const variants = {
   left_to_right_Variants,
   right_to_left_Variants,
   bottom_to_top_Variants,
+  circleHeroVariant,
 };
 export default variants;
