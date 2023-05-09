@@ -134,6 +134,7 @@
     content: $content;
     position: absolute;
     inset: 0;
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -157,5 +158,13 @@
     100% {
       --gradient-angle: 360deg;
     }
+  }
+
+  @include breakpoint("sm") {
+    &::after {
+      letter-spacing: 0.3rem;
+      font-size: 0.8rem;
+    }
+
   }
 }
