@@ -1,7 +1,7 @@
 import sendgrid from "@sendgrid/mail";
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY || "");
-export async function GET(request) {
+export async function POST(request) {
   // const { name, email, message } = await request.json();
 
 

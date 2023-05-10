@@ -26,11 +26,9 @@ const Contact = () => {
     }
     try {
       const res = await fetch('/api/contact', {
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json',
-        },
-       
+        // method: 'POST',
+        // headers: { 'Content-Type': 'application/json' },
+        // body: JSON.stringify({ name, email, message })
       })
       if (res.status === 200) console.log('Message sent(front)');
     } catch (error) {
