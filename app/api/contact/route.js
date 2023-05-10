@@ -16,8 +16,8 @@ export async function POST(request) {
 
   try {
     await transporter.sendMail({
-      from: emailnode,
-      to: emailnode,
+      from: email,
+      to: email,
       subject: `Message from ${name} ${email}`,
       text: message,
     });

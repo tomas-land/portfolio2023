@@ -30,7 +30,7 @@ const Contact = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, message })
       })
-      if (res.status === 200) console.log(res);
+      if (res.status === 200) setIsMessageSent(true);
     } catch (error) {
       console.log("error sending to api/contact", error);
     }
