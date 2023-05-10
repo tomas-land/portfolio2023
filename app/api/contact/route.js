@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 
-const emailNODE = process.env.EMAIL;
-const passNODE = process.env.EMAIL_PASS;
+const emailnode = process.env.EMAIL;
+const passnode = process.env.EMAIL_PASS;
 
 export async function POST(request) {
   const { name, email, message } = await request.json();
@@ -9,16 +9,16 @@ export async function POST(request) {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: emailNODE,
-      passNODE,
+      user: emailnode,
+      passnode,
     },
   });
 
   try {
     await transporter.sendMail({
-      from: email,
-      to: email,
-      subject: `Message from ${name}`,
+      from: emailnode,
+      to: emailnode,
+      subject: `Message from ${name} ${email}`,
       text: message,
     });
     return new Response({ status: 200 });

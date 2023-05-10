@@ -9,10 +9,10 @@ import Contact from './Contact'
 export default function Home() {
   return (
     <main>
-      {/* <Hero />
+      <Hero />
       <About />
       <Skills />
-      <Projects /> */}
+      <Projects />
       <Contact />
     </main>
   )
