@@ -32,9 +32,9 @@ const Contact = () => {
         },
         body: JSON.stringify({ name, email, message })
       })
-      if (res.status === 200) setIsMessageSent(true)
+      if (res.status === 200) console.log('Message sent');
     } catch (error) {
-      console.log(error)
+      console.log("error sending to api/contact", error);
     }
   }
   useEffect(() => {
