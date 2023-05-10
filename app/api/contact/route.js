@@ -1,21 +1,21 @@
 import sendgrid from "@sendgrid/mail";
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY || "");
-export async function POST(request) {
+export async function GET(request) {
   const { name, email, message } = await request.json();
   const msg = {
     to: "tomaslanda1989@gmail.com",
-   from: "tomaslanda1989@gmail.com",
-   subject: "Tomas sent you a message from Toams",
-   text: "message",
-}
+    from: "tomaslanda1989@gmail.com",
+    subject: "Tomas sent you a message from Toams",
+    text: "message",
+  };
   try {
     await sendgrid.send(msg);
     // console.log('email sent');
     // return new Response({ status: 200 });
   } catch (error) {
     console.log(error);
-    return new Response({ status: 500 ,message: "api error"});
+    return new Response({ status: 500, message: "api error" });
   }
   return new Response({ status: 200 });
 }
