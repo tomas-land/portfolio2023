@@ -1,8 +1,8 @@
 import sendgrid from "@sendgrid/mail";
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY || "");
-export async function POST(request) {
-  const { name, email, message } = await request.json();
+export async function GET(request) {
+  // const { name, email, message } = await request.json();
 
 
   // const connectedStrings = name+email+message;
@@ -10,12 +10,12 @@ export async function POST(request) {
   const msg = {
     to: "tomaslanda1989@gmail.com",
     from: "tomaslanda1989@gmail.com",
-    subject: `${name} sent you a message from ${email}`,
+    subject: "Tomas sent you a message from Toams",
     text: message,
   };
   (async () => {
     try {
-      await sendgrid.send(msg,{Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`});
+      await sendgrid.send(msg);
     } catch (error) {
       console.error(error);
   
