@@ -13,14 +13,25 @@ export async function POST(request) {
     subject: `${name} sent you a message from ${email}`,
     text: message,
   };
-  try {
-    await sendgrid.send(msg);
-    // console.log('email sent');
-    // return new Response({ status: 200 });
-  } catch (error) {
-    console.log(error);
-    return new Response({ status: 500 ,message: "api error"});
-  }
+  (async () => {
+    try {
+      await sendgrid.send(msg,{Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`});
+    } catch (error) {
+      console.error(error);
+  
+      if (error.response) {
+        console.error(error.response.body)
+      }
+    }
+  })();
+  // try {
+  //   await sendgrid.send(msg);
+  //   // console.log('email sent');
+  //   // return new Response({ status: 200 });
+  // } catch (error) {
+  //   console.log(error);
+  //   return new Response({ status: 500 ,message: "api error"});
+  // }
 }
 
 // async function sendEmail(req, res) {
