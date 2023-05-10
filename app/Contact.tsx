@@ -28,7 +28,7 @@ const Contact = () => {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'content-type': 'application/json',
         },
         body: JSON.stringify({ name, email, message })
       })
