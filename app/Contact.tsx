@@ -28,7 +28,7 @@ const Contact = () => {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message })
+        body: JSON.stringify({ name, clientEmail: email, message })
       })
       if (res.status === 200) setIsMessageSent(true);
     } catch (error) {
@@ -56,7 +56,7 @@ const Contact = () => {
             <textarea className={s.message} maxLength={800} placeholder="Message" value={message} autoCorrect="off" onChange={(e) => setMessage(e.target.value)}></textarea>
             <div className={s.errors}>{errors.message}</div>
           </div>
-            {isMessageSent ? <div className={s.message_sent}>Thank you!</div> : <button className={s.btn_submit} type="submit"></button>}
+          {isMessageSent ? <div className={s.message_sent}>Thank you!</div> : <button className={s.btn_submit} type="submit"></button>}
         </form>
       </div >
     </section >
