@@ -1,38 +1,52 @@
 import sendgrid from "@sendgrid/mail";
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY || "");
-export async function GET(request) {
-  // const { name, email, message } = await request.json();
-return new Response("ok");
+export async function POST(request) {
+  const { name, email, message } = await request.json();
+  const msg = {
+    to: "tomaslanda1989@gmail.com",
+   from: "tomaslanda1989@gmail.com",
+   subject: "Tomas sent you a message from Toams",
+   text: "message",
 }
-  // const connectedStrings = name+email+message;
-  // console.log(connectedStrings);
-  // const msg = {
-  //   to: "tomaslanda1989@gmail.com",
-  //   from: "tomaslanda1989@gmail.com",
-  //   subject: "Tomas sent you a message from Toams",
-  //   text: "message",
-  // };
-  // (async () => {
-  //   try {
-  //     await sendgrid.send(msg);
-  //   } catch (error) {
-  //     console.error(error);
-  
-  //     if (error.response) {
-  //       console.error(error.response.body)
-  //     }
-  //   }
-  // })();
-  // try {
-  //   await sendgrid.send(msg);
-  //   // console.log('email sent');
-  //   // return new Response({ status: 200 });
-  // } catch (error) {
-  //   console.log(error);
-  //   return new Response({ status: 500 ,message: "api error"});
-  // }
+  try {
+    await sendgrid.send(msg);
+    // console.log('email sent');
+    // return new Response({ status: 200 });
+  } catch (error) {
+    console.log(error);
+    return new Response({ status: 500 ,message: "api error"});
+  }
+  return new Response({ status: 200 });
+}
 
+// const connectedStrings = name+email+message;
+// console.log(connectedStrings);
+// const msg = {
+//   to: "tomaslanda1989@gmail.com",
+//   from: "tomaslanda1989@gmail.com",
+//   subject: "Tomas sent you a message from Toams",
+//   text: "message",
+// };
+// (async () => {
+//   try {
+//     await sendgrid.send(msg);
+//   } catch (error) {
+//     console.error(error);
+
+//     if (error.response) {
+//       console.error(error.response.body)
+//     }
+//   }
+// })();
+// try {
+//   await sendgrid.send(msg);
+//   // console.log('email sent');
+//   // return new Response({ status: 200 });
+// } catch (error) {
+//   console.log(error);
+//   return new Response({ status: 500 ,message: "api error"});
+// }
 
 // async function sendEmail(req, res) {
 //   try {
