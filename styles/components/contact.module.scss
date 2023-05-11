@@ -2,7 +2,7 @@
 @import "../mixins.scss";
 
 .contact {
-  height: 100vh;
+  height: 100dvh;
   @include flex-center();
   flex-direction: column;
 
