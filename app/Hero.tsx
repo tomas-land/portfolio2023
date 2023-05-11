@@ -20,25 +20,27 @@ const Hero = () => {
       <motion.div className={s.circle}
         initial="hide" animate="show" variants={variants.circleHeroVariant}
       ></motion.div>
-      <h2 className={s.version}>v2.0</h2>
-      <div className={s.social_icons}>
-        <SocialIcon url="https://facebook.com" className={s.icon} target="_blank" rel="noopener noreferrer" bgColor='transparent' fgColor='#777777' />
-        <SocialIcon url="https://github.com" className={s.icon} target="_blank" rel="noopener noreferrer" bgColor='transparent' fgColor='#777777' />
-        <SocialIcon url="https://linkedin.com" className={s.icon} target="_blank" rel="noopener noreferrer" bgColor='transparent' fgColor='#777777' />
+      <div className={s.content_wrapper}>
+        <h2 className={s.version}>v2.0</h2>
+        <div className={s.social_icons}>
+          <SocialIcon url="https://facebook.com" className={s.icon} target="_blank" rel="noopener noreferrer" bgColor='transparent' fgColor='#777777' />
+          <SocialIcon url="https://github.com" className={s.icon} target="_blank" rel="noopener noreferrer" bgColor='transparent' fgColor='#777777' />
+          <SocialIcon url="https://linkedin.com" className={s.icon} target="_blank" rel="noopener noreferrer" bgColor='transparent' fgColor='#777777' />
+        </div>
+        <motion.div className={s.name} ref={nameRef} initial="hide" animate={isInViewName ? "show" : "hide"} variants={variants.left_to_right_Variants} >TOMAS LANDA</motion.div>
+        <motion.div className={s.title} ref={titleRef} initial="hide" animate={isInViewTitle ? "show" : "hide"} variants={variants.right_to_left_Variants}>
+          <div className={s.part1}>WEB</div>
+          <div className={s.part2}>DEVELOPER</div>
+        </motion.div>
+        <div className={s.underline}></div>
+        <nav className={s.nav}>
+          <ul className={s.nav_items}>
+            {nav_list.map((item) => (
+              <li key={item.name}><a className={s.nav_item} href={item.path}>{item.name}</a></li>
+            ))}
+          </ul>
+        </nav>
       </div>
-      <motion.div className={s.name} ref={nameRef} initial="hide" animate={isInViewName ? "show" : "hide"} variants={variants.left_to_right_Variants} >TOMAS LANDA</motion.div>
-      <motion.div className={s.title} ref={titleRef} initial="hide" animate={isInViewTitle ? "show" : "hide"} variants={variants.right_to_left_Variants}>
-        <div className={s.part1}>WEB</div>
-        <div className={s.part2}>DEVELOPER</div>
-      </motion.div>
-      <div className={s.underline}></div>
-      <nav className={s.nav}>
-        <ul className={s.nav_items}>
-          {nav_list.map((item) => (
-            <li key={item.name}><a className={s.nav_item} href={item.path}>{item.name}</a></li>
-          ))}
-        </ul>
-      </nav>
       <a className={s.scroll_down_btn} href="#about" ><span></span></a>
     </section>
   )

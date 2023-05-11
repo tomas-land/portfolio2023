@@ -25,10 +25,9 @@ export async function POST(request) {
       subject: `Message from ${name} - ${clientEmail}`,
       text: message,
     });
-    return new Response( { status: 200, message: "success" });
+    return new Response( { status: 200});
   } catch (error) {
     console.log(error);
     return new Response({ status: 400, message: error.message });
   }
-  return new Response({ status: 400, message: "bad request" });
 }
