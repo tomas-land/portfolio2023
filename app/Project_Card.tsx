@@ -36,9 +36,12 @@ const Project_Card = ({ project }: iProps) => {
             pagination: false,
             interval: 3000,
             speed: 5000,
-            height: 600,
+            height: 650,
             pauseOnHover: false,
             breakpoints: {
+              1024: {
+                height: 800,
+              },
               768: {
                 height: 300,
               }

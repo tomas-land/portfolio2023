@@ -47,7 +47,7 @@
   .content {
     display: flex;
     flex-direction: column;
-    padding: 2rem 2rem 0;
+    padding: 2rem 2rem 2rem;
     line-height: 1.4rem;
 
 
@@ -110,17 +110,18 @@
 
     .btns {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       flex-grow: 1;
       padding: 0 2rem;
       gap: 3rem;
 
       @include breakpoint("md") {
-        padding: 3rem 2rem;
+        padding-top: 2rem;
       }
 
       @include breakpoint("sm") {
         padding: 2rem 0;
+        gap: 2rem;
       }
 
       .btn_preview {
