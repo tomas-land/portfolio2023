@@ -3,7 +3,7 @@
 
 .about {
   position: relative;
-  height: 100dvh;
+  height: 100vh;
   z-index: 1001;
   @include flex-center();
   flex-direction: column;
