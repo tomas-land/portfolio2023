@@ -1,5 +1,6 @@
 @import "../variables.scss";
 @import "../mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 .hero {
   position: relative;
@@ -14,7 +15,7 @@
     height: 28rem;
     border-radius: 50%;
     background-color: #222222;
- 
+
 
   }
 
@@ -64,9 +65,10 @@
     }
 
     .title {
-      font-size: 4rem;
-      font-weight: 900;
-      letter-spacing: 0.8rem;
+      font-size: 5rem;
+      font-weight: 700;
+      font-family: 'Anton', sans-serif;
+    letter-spacing: 0.8rem;
       text-align: center;
       color: $primary4;
       display: flex;
