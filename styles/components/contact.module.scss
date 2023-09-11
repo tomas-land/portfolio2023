@@ -1,5 +1,5 @@
-@import "../variables.scss";
-@import "../mixins.scss";
+@import '../variables.scss';
+@import '../mixins.scss';
 
 .contact {
   height: 100dvh;
@@ -14,7 +14,7 @@
     margin-bottom: 3rem;
     font-weight: 700;
 
-    @include breakpoint("sm") {
+    @include breakpoint('sm') {
       font-size: 1.2rem;
     }
   }
@@ -24,13 +24,12 @@
     flex-direction: column;
     align-items: center;
 
-
     .inputs {
       width: 25rem;
       display: flex;
       flex-direction: column;
 
-      @include breakpoint("sm") {
+      @include breakpoint('sm') {
         width: 80vw;
       }
 
@@ -45,7 +44,7 @@
         outline: none;
         transition: all 0.3s ease-in-out;
 
-        @include breakpoint("sm") {
+        @include breakpoint('sm') {
           font-size: 0.8rem;
         }
 
@@ -74,7 +73,7 @@
         font-family: $font-roboto;
         transition: all 0.3s ease-in-out;
 
-        @include breakpoint("sm") {
+        @include breakpoint('sm') {
           font-size: 0.8rem;
         }
 
@@ -91,9 +90,7 @@
         &::-webkit-scrollbar {
           display: none;
         }
-
       }
-
 
       .errors {
         color: rgb(216, 5, 5);
@@ -102,14 +99,27 @@
         text-align: center;
         letter-spacing: 0.2rem;
         padding: 0.5rem;
-
       }
-
     }
 
     .btn_submit {
       margin-top: 2rem;
-      @include btn-glowing-shadow($primary2, "SEND");
+      @include btn-glowing-shadow($primary2, '');
+      span {
+        position: relative;
+        z-index: 1111;
+        font-size: 1rem;
+      }
+    }
+    .btn_sending {
+      margin-top: 2rem;
+      @include btn-glowing-shadow($primary2, '');
+      span {
+        position: relative;
+        inset: 0 0 0 0;
+        z-index: 1111;
+        font-size: 1rem;
+      }
     }
 
     .message_sent {
@@ -120,7 +130,7 @@
       letter-spacing: 1rem;
       font-weight: 700;
 
-      @include breakpoint("sm") {
+      @include breakpoint('sm') {
         font-size: 1.2rem;
       }
     }

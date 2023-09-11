@@ -1,42 +1,31 @@
 @import 'variables';
 
-
 // media queries   /////////////////////////////////////////////////
 @mixin breakpoint($point) {
-
-  @if $point=='2lg' {
-    @media (max-width:1400px) {
-      @content
+  @if $point== '2lg' {
+    @media (max-width: 1400px) {
+      @content;
     }
   }
 
-  ;
-
-  @if $point=='lg' {
-    @media (max-width:1024px) {
-      @content
+  @if $point== 'lg' {
+    @media (max-width: 1024px) {
+      @content;
     }
   }
 
-  ;
-
-
-  @if $point=='md' {
-    @media (max-width:768px) {
-      @content
+  @if $point== 'md' {
+    @media (max-width: 768px) {
+      @content;
     }
   }
 
-  ;
-
-  @if $point=='sm' {
-    @media (max-width:600px) {
-      @content
+  @if $point== 'sm' {
+    @media (max-width: 600px) {
+      @content;
     }
   }
 }
-
-;
 
 //layout   ///////////////////////////////////////////////////////
 @mixin flex-center() {
@@ -44,8 +33,6 @@
   align-items: center;
   justify-content: center;
 }
-
-;
 
 // ui    /////////////////////////////////////////////////////////
 @mixin scrollDown() {
@@ -106,7 +93,6 @@
 }
 
 @mixin btn-glowing-shadow($background, $content) {
-
   width: 100%;
   height: 3rem;
   border: 1px solid $primary4;
@@ -117,15 +103,10 @@
   cursor: pointer;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
-    background: conic-gradient(from var(--gradient-angle),
-        #3f3f3f,
-        #acabab,
-        #858585,
-        #3f3f3f,
-      );
+    background: conic-gradient(from var(--gradient-angle), #3f3f3f, #acabab, #858585, #3f3f3f);
     filter: blur(0.4rem);
     animation: rotate 5s cubic-bezier(0.68, 0.68, 0.24, 0.26) infinite;
   }
@@ -140,15 +121,12 @@
     align-items: center;
     background-color: $primary3;
     z-index: 1;
-
-
   }
 
   &:hover::after {
     filter: contrast(1.2);
     transition: filter 0.5s ease-in-out;
   }
-
 
   @keyframes rotate {
     0% {
@@ -160,11 +138,10 @@
     }
   }
 
-  @include breakpoint("sm") {
+  @include breakpoint('sm') {
     &::after {
       letter-spacing: 0.3rem;
       font-size: 0.8rem;
     }
-
   }
 }
