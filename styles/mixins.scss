@@ -3,7 +3,7 @@
 // media queries   /////////////////////////////////////////////////
 @mixin breakpoint($point) {
   @if $point== '2lg' {
-    @media (max-width: 1400px) {
+    @media (max-width: 1200px) {
       @content;
     }
   }

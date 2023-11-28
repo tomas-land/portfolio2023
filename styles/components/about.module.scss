@@ -25,9 +25,8 @@
 
     .content {
       text-align: justify;
-      max-width: 32rem;
+      max-width: 45rem;
       line-height: 1.6rem;
-
 
       .title {
         color: $primary3;
@@ -38,7 +37,7 @@
         font-weight: 700;
 
         @include breakpoint("sm") {
-          padding: 1rem;
+          padding: 0.5rem;
           font-size: 1.2rem;
         }
       }
@@ -46,10 +45,10 @@
       .text {
         color: $primary4;
         padding: 1rem 2.5rem;
-        line-height: 1.4rem;
-        text-indent: 2rem;
+        line-height: 1.5rem;
 
         @include breakpoint("sm") {
+          line-height: 1.2rem;
           font-size: 0.8rem;
         }
       }

@@ -7,6 +7,8 @@ import Image, { StaticImageData } from "next/image"
 import Link from "next/link"
 import { IconType } from "react-icons/lib";
 import Tech_Icon from "./components/Tech_Icon"
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
 
 
 interface iProps {
@@ -36,11 +38,11 @@ const Project_Card = ({ project }: iProps) => {
             pagination: false,
             interval: 3000,
             speed: 5000,
-            height: 650,
+           height: 700,
             pauseOnHover: false,
             breakpoints: {
               1024: {
-                height: 800,
+                height: 500,
               },
               768: {
                 height: 300,
@@ -48,8 +50,8 @@ const Project_Card = ({ project }: iProps) => {
             }
           }}>
           {images.map((image, index) => (
-            <SplideSlide key={index}>
-              <Image src={image} className={s.image} alt="project_image" />
+            <SplideSlide key={index} className={s.slide}>
+              <Image src={image} className={s.image} alt="project_image" fill />
             </SplideSlide>
           ))}
         </Splide>
@@ -66,7 +68,10 @@ const Project_Card = ({ project }: iProps) => {
         <div className={s.technologies}>
           <h4 className={s.tech_title}>Technologies</h4>
           <div className={s.tech_icons}>
-            {tech_stack.map((icon_name: string) => <div key={icon_name}><Tech_Icon icon_name={icon_name} /></div>)}
+            {tech_stack.map((icon_name: string) => <div data-tooltip-id="my-tooltip" data-tooltip-content={icon_name} data-tooltip-place="right" key={icon_name}>
+              <Tech_Icon icon_name={icon_name} />
+              <Tooltip id="my-tooltip" />
+            </div>)}
           </div>
         </div>
         <div className={s.btns}>

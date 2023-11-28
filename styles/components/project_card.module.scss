@@ -8,40 +8,40 @@
   max-width: 90rem;
   margin-bottom: 10rem;
 
-  @include breakpoint("md") {
+  @include breakpoint("2lg") {
     grid-template-columns: 1fr;
   }
 
   &:hover {
     .slider {
-      .image {
-        filter: grayscale(0%);
+      .slide {
+        .image {
+          filter: grayscale(0%);
+        }
       }
     }
   }
 
   .slider {
+    .slide {
+      position: relative;
+      display: flex;
+      .image {
+        filter: grayscale(80%);
+        object-fit: cover;
+        
+        transition: all 0.3s ease-in-out;
 
-    .image {
-      width: 100%;
-      height: 100%;
-      filter: grayscale(80%);
-      object-fit: cover;
-      background-position: bottom;
-      transition: all 0.3s ease-in-out;
+        @include breakpoint("md") {
+          filter: none;
+        }
 
-      @include breakpoint("md") {
-        height: 240%;
-        filter: none;
-      }
-
-      @include breakpoint("sm") {
-        height: 140%;
-        filter: none;
-
+        @include breakpoint("sm") {
+          height: 140%;
+          filter: none;
+        }
       }
     }
-
   }
 
   .content {
@@ -49,7 +49,6 @@
     flex-direction: column;
     padding: 2rem 2rem 2rem;
     line-height: 1.4rem;
-
 
     .name {
       color: $primary5;
@@ -88,7 +87,7 @@
     .technologies {
       display: flex;
       flex-direction: column;
-      padding: 0 2rem;
+      padding: 0 2rem 2rem;
 
       @include breakpoint("sm") {
         padding: 0 0 1rem;
@@ -104,7 +103,6 @@
         display: flex;
         gap: 1rem;
         color: $primary5;
-
       }
     }
 
