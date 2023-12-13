@@ -23,9 +23,9 @@ const Hero = () => {
       <div className={s.content_wrapper}>
         <h2 className={s.version}>v2.0</h2>
         <div className={s.social_icons}>
-          <SocialIcon url="https://facebook.com" className={s.icon} target="_blank" rel="noopener noreferrer" bgColor='transparent' fgColor='#777777' />
-          <SocialIcon url="https://github.com" className={s.icon} target="_blank" rel="noopener noreferrer" bgColor='transparent' fgColor='#777777' />
-          <SocialIcon url="https://linkedin.com" className={s.icon} target="_blank" rel="noopener noreferrer" bgColor='transparent' fgColor='#777777' />
+          <SocialIcon url="https://www.facebook.com/tomas.landa.712/" className={s.icon} target="_blank" rel="noopener noreferrer" bgColor='transparent' fgColor='#777777' />
+          <SocialIcon url="https://github.com/tomas-land" className={s.icon} target="_blank" rel="noopener noreferrer" bgColor='transparent' fgColor='#777777' />
+          <SocialIcon url="https://www.linkedin.com/in/tomas-landa-424534220/" className={s.icon} target="_blank" rel="noopener noreferrer" bgColor='transparent' fgColor='#777777' />
         </div>
         <motion.div className={s.name} ref={nameRef} initial="hide" animate={isInViewName ? "show" : "hide"} variants={variants.left_to_right_Variants} >TOMAS LANDA</motion.div>
         <motion.div className={s.title} ref={titleRef} initial="hide" animate={isInViewTitle ? "show" : "hide"} variants={variants.right_to_left_Variants}>
